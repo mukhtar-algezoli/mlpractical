@@ -155,7 +155,7 @@ class ExperimentBuilder(nn.Module):
         """
         ########################################
         # print("i am here")
-        for para in named_parameters.grad:
+        for para in named_parameters:
             print(para)
         #     print(para)
         #     # print(para[1])
