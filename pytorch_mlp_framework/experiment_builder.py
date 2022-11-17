@@ -180,8 +180,8 @@ class ExperimentBuilder(nn.Module):
         # ########################################
             
         
-        # plt = self.plot_func_def(all_grads, layers)
-        # plt.savefig("test_plot.pdf")
+        plt = self.plot_func_def(all_grads, layers)
+        plt.savefig("test_plot.pdf")
 
         
         return plt
