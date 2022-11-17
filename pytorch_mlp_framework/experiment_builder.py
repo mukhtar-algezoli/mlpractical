@@ -155,13 +155,15 @@ class ExperimentBuilder(nn.Module):
         """
         ########################################
         # print("i am here")
-        for para in named_parameters:
-            # print(para[1].grad)
-            # print(np.mean(para[1].grad.cpu().detach().numpy()))
-            # print(torch.mean(para[1].grad))
-            all_grads.append(torch.abs(torch.mean(para[1].grad)))
-            layers.append(para[0])
-            # print("/////////////////////////////////")
+        for para in named_parameters :
+            if "bias" not in str(para[0]):
+                # print(para[1].grad)
+                # print(np.mean(para[1].grad.cpu().detach().numpy()))
+                # print(torch.mean(para[1].grad))
+                layers_names = str(para[0]).split(".")
+                all_grads.append(torch.abs(torch.mean(para[1].grad)))
+                layers.append(layers_names[1] + "_" + layers_names[3])
+                # print("/////////////////////////////////")
 
         #     print(para)
         #     # print(para[1])
