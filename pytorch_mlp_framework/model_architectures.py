@@ -358,7 +358,7 @@ class ConvolutionalProcessingBlockBatchNormResidual(nn.Module):
         out = self.layer_dict['batchnorm_1'].forward(out)
 
         out += identity
-        
+
         out = F.leaky_relu(out)
 
         return out
@@ -430,8 +430,8 @@ class ConvolutionalDimensionalityReductionBlockBatchNorm(nn.Module):
 
 class ConvolutionalNetwork(nn.Module):
     def __init__(self, input_shape, num_output_classes, num_filters,
-                 num_blocks_per_stage, num_stages, use_bias=False, processing_block_type=ConvolutionalProcessingBlockBatchNorm,
-                 dimensionality_reduction_block_type=ConvolutionalDimensionalityReductionBlockBatchNorm):
+                 num_blocks_per_stage, num_stages, use_bias=False, processing_block_type=ConvolutionalProcessingBlock,
+                 dimensionality_reduction_block_type=ConvolutionalDimensionalityReductionBlock):
         """
         Initializes a convolutional network module
         :param input_shape: The shape of the tensor to be passed into this network
