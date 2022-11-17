@@ -42,8 +42,8 @@ val_data_loader = DataLoader(val_data, batch_size=args.batch_size, shuffle=True,
 test_data_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True, num_workers=4)
 
 if args.block_type == 'conv_block':
-    processing_block_type = ConvolutionalProcessingBlock
-    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock
+    processing_block_type = ConvolutionalProcessingBlockBatchNorm
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlockBatchNorm
 elif args.block_type == 'empty_block':
     processing_block_type = EmptyBlock
     dim_reduction_block_type = EmptyBlock
