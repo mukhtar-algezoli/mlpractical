@@ -154,12 +154,29 @@ class ExperimentBuilder(nn.Module):
         Complete the code in the block below to collect absolute mean of the gradients for each layer in all_grads with the             layer names in layers.
         """
         ########################################
+        # print("i am here")
+        # for para in named_parameters:
+        #     print(para[0])
+        #     print(para)
+        #     # print(para[1])
+        #     # print(para[1].detach().numpy())
+        #     # print(para[1].detach().numpy().ndim)
+        #     if para[1].detach().numpy().ndim == 4:
+        #         b = np.mean(para[1].detach().numpy())
+        #         print(b)
+        #         # b = np.mean(b, axis=2)
+        #         # b = np.mean(b, axis=1)
+        #         # print(b)
+        #         # print(b.shape)
+        #         all_grads.append(b)
+        #         layers.append(para[0])
         
-        
-        ########################################
+        # ########################################
             
         
-        plt = self.plot_func_def(all_grads, layers)
+        # plt = self.plot_func_def(all_grads, layers)
+        # plt.savefig("test_plot.pdf")
+
         
         return plt
     
@@ -299,6 +316,7 @@ class ExperimentBuilder(nn.Module):
             if not os.path.exists(os.path.join(self.experiment_saved_models, 'gradient_flow_plots')):
                 os.mkdir(os.path.join(self.experiment_saved_models, 'gradient_flow_plots'))
                 # plt.legend(loc="best")
+            print(os.path.join(self.experiment_saved_models, 'gradient_flow_plots', "epoch{}.pdf".format(str(epoch_idx))))
             plt.savefig(os.path.join(self.experiment_saved_models, 'gradient_flow_plots', "epoch{}.pdf".format(str(epoch_idx))))
             ################################################################
         
