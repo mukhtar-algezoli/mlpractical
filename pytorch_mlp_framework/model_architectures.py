@@ -225,7 +225,7 @@ class ConvolutionalDimensionalityReductionBlock(nn.Module):
 
     def forward(self, x):
         out = x
-        print(x.shape())
+        print(x.shape)
 
         out = self.layer_dict['conv_0'].forward(out)
         out = F.leaky_relu(out)
