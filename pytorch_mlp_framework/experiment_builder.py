@@ -158,8 +158,10 @@ class ExperimentBuilder(nn.Module):
         for para in named_parameters:
             # print(para[1].grad)
             # print(np.mean(para[1].grad.cpu().detach().numpy()))
-            print(torch.mean(para[1].grad))
-            print("/////////////////////////////////")
+            # print(torch.mean(para[1].grad))
+            all_grads.append(torch.mean(para[1].grad))
+            layers.append(para[0])
+            # print("/////////////////////////////////")
 
         #     print(para)
         #     # print(para[1])
