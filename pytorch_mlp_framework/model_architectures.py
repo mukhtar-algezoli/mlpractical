@@ -302,7 +302,7 @@ class ConvolutionalProcessingBlockBatchNorm(nn.Module):
 
 class ConvolutionalDimensionalityReductionBlockBatchNorm(nn.Module):
     def __init__(self, input_shape, num_filters, kernel_size, padding, bias, dilation, reduction_factor):
-        super(ConvolutionalDimensionalityReductionBlock, self).__init__()
+        super(ConvolutionalDimensionalityReductionBlockBatchNorm, self).__init__()
 
         self.num_filters = num_filters
         self.kernel_size = kernel_size
