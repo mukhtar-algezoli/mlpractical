@@ -159,7 +159,7 @@ class ExperimentBuilder(nn.Module):
             # print(para[1].grad)
             # print(np.mean(para[1].grad.cpu().detach().numpy()))
             # print(torch.mean(para[1].grad))
-            all_grads.append(torch.mean(para[1].grad))
+            all_grads.append(torch.abs(torch.mean(para[1].grad)))
             layers.append(para[0])
             # print("/////////////////////////////////")
 
