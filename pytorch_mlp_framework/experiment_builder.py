@@ -161,6 +161,7 @@ class ExperimentBuilder(nn.Module):
                 # print(np.mean(para[1].grad.cpu().detach().numpy()))
                 # print(torch.mean(para[1].grad))
                 layers_names = str(para[0]).split(".")
+                print(layers_names)
                 all_grads.append(torch.abs(torch.mean(para[1].grad)))
                 if "logit" in str(para[0]):
                     layers.append(layers_names[0] + "_" + layers_names[1])
