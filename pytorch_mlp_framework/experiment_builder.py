@@ -156,7 +156,9 @@ class ExperimentBuilder(nn.Module):
         ########################################
         # print("i am here")
         for para in named_parameters:
-            print(para[1].grad)
+            # print(para[1].grad)
+            print(np.mean(para[1].grad))
+
         #     print(para)
         #     # print(para[1])
         #     # print(para[1].detach().numpy())
