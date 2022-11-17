@@ -163,7 +163,10 @@ class ExperimentBuilder(nn.Module):
                 layers_names = str(para[0]).split(".")
                 print(len(layers_names))
                 all_grads.append(torch.abs(torch.mean(para[1].grad)))
-                layers.append(layers_names[1] + "_" + layers_names[3])
+                if "logit" in str(para[0]):
+                    layers.append(layers_names[0] + "_" + layers_names[1])
+                else:
+                    layers.append(layers_names[1] + "_" + layers_names[3])
                 # print("/////////////////////////////////")
 
         #     print(para)
