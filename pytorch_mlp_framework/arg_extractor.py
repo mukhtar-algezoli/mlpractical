@@ -25,6 +25,8 @@ def get_args():
     parser.add_argument('--image_num_channels', nargs="?", type=int, default=3,
                         help='The channel dimensionality of our image-data')
     parser.add_argument('--image_height', nargs="?", type=int, default=32, help='Height of image data')
+    parser.add_argument('--learning_rate', nargs="?", type=float, default=1e-3, help='initial learning rate for adam')
+
     parser.add_argument('--image_width', nargs="?", type=int, default=32, help='Width of image data')
     parser.add_argument('--num_stages', nargs="?", type=int, default=3,
                         help='Number of convolutional stages in the network. A stage is considered a sequence of '
