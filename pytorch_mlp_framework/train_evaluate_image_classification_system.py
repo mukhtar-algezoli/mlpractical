@@ -69,7 +69,7 @@ conv_experiment = ExperimentBuilder(network_model=custom_conv_net,
                                     weight_decay_coefficient=args.weight_decay_coefficient,
                                     use_gpu=args.use_gpu,
                                     continue_from_epoch=args.continue_from_epoch,
-                                    lr = args.lr,
+                                    lr = args.learning_rate,
                                     train_data=train_data_loader, val_data=val_data_loader,
                                     test_data=test_data_loader)  # build an experiment object
 # plt = conv_experiment.plot_grad_flow(conv_experiment.model.named_parameters())
